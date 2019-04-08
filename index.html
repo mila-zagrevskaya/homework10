@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HOMEWORKS FEA-12</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.png">
+	<script src = "js/index101.js"></script>
+	<script src = "js/index102.js"></script>
+	<script src = "js/index103.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrapper">
+			<h1>Загревская Людмила <br>fea-12</h1>
+			<div class="exercise">
+				<h2> exercise 10.1</h2>
+				<p class = 'description bold'>Логирование поступающих сообщений в объекте log
+				</p>
+				<p class = 'description'>Задан массив сообщений и пустой объект log:
+				</p>
+				<img src="images/Screenshot_1.png" alt="screen" class="screen">
+				<p class = 'description'>Далее, есть функция, отправляющая сообщения в случайном порядке в случайное время:
+				</p>
+				<img src="images/Screenshot_2.png" alt="screen" class="screen">
+				<p class = 'description'>Обратите внимание, что эта функция получает при вызове не только текст сообщения, но и кoлбэк-функцию, которой нужно передать это сообщение <br><br>С помощью кода:
+				</p>
+				<img src="images/Screenshot_3.png" alt="screen" class="screen">
+				<p class = 'description'>инициируем отправку сообщений <br><br>!warning:<br><br>Ваша задача - напилить код функции handler, которая получает сообщение и заносит его в объект log <br> в виде нового свойства, значение которого - текст поступившего сообщения, <br> а ключ ( имя свойства ) - это время поступления сообщения ( в виде строки )
+				</p>
+				<img src="images/Screenshot_4.png" alt="screen" class="screen">
+				<p class = 'description'>В помощь вам уже есть функция, которая формирует ключ очередного сообщения:
+				</p>
+				<img src="images/Screenshot_5.png" alt="screen" class="screen">
+				<p class = 'description'>На случай, если два сообщения поступят одновременно, функция getKey добавляет "[2]" к значению ключа ( иначе значения ключей двух сообщений будут совпадать )
+				</p>
+				<!-- <div class="result1"></div> -->
+				<button name = "btn" class="btn" onclick = "exercise1()"> Show result in console </button>
+			</div>
+
+			<div class="exercise">
+				<h2>exercise  10.2</h2>
+				<p class = 'description'>Допилите код конструктора User, дополнив его акцессорами приватного свойства presence так, чтобы после выполнения скрипта:
+				</p>
+				<img src="images/Screenshot_6.png" alt="screen" class="screen">
+				<p class = 'description'>в консоли было: <br><br> "Ivan is absent" <br><br> а после выполнения кода:
+				</p>
+				<img src="images/Screenshot_7.png" alt="screen" class="screen">
+				<p class = 'description'>в консоли было: <br><br> "Ivan is present"
+				</p>
+				<!-- <div class=".show-code, container">
+				</div> -->
+				<!-- <div class="result2"></div> -->
+				<button name = "btn" class="btn" onclick = "exercise2()"> Show result in console </button>
+			</div>
+			<div class="exercise">
+				<h2>exercise  10.3</h2>
+				<p class = 'description'>Объявить функцию-конструктор User
+				</p>
+				<p class = 'description'>!warning: Конструктор должен принимать аргументы, описывающие юзера
+				</p>
+				<p class = 'description bold'>Статические свойства и методы конструктора
+				<p class = 'description'>У конструктора должны быть следующие :warning: не наследуемые экземплярами свойства и методы:
+				</p>
+				<img src="images/Screenshot_8.png" alt="screen" class="screen">
+				<img src="images/Screenshot_9.png" alt="screen" class="screen">
+				<img src="images/Screenshot_10.png" alt="screen" class="screen">
+				<p class = 'description bold'>Собственные свойства экземпляров </p>
+				<p class = 'description'>
+					<ol class = "props">
+						<li>name ( имя пользователя )</li>
+						<li> email</li>
+						<li>photoURL ( URL фотографии пользователя )
+							<ul class = "props">
+								<li>Конструктор должен иметь дефолтные значения для всех аргументов</li>
+								<li>дефолтное значение URL фотографии пользователя должно быть результатом работы статического метода getAvatar</li>
+							</ul>
+						</li>
+					</ol>
+				</p>
+				<p class = 'description bold'>Унаследованные свойства экземпляров</p>
+				<p class = 'description'>
+					<ol class = "props">
+						<li>неперечислимое неизменяемое свойство messageBox - элемент DOM
+							<ul class = "props">
+								<li>messageBox - это контейнер, куда будут выводиться сообщения всех пользователей и admin</li>
+								<li>при выводе сообщения пользователя в messageBox должны отображаться его аватар и имя</li>
+							</ul>
+						</li>
+						<li> унаследованные методы write и read
+							<ul>
+								<li>запись осуществляется в messageBox, чтение - из messageBox</li>
+							</ul>
+						</li>
+					</ol>
+				</p>
+				<p class = 'description bold'>После того, как конструктор будет объявлен, выполните код в консоли: </p>	
+				<img src="images/Screenshot_11.png" alt="screen" class="screen">
+				<p class = 'description'>Короче, юзеры пишут в messageBox из консоли: <br><br>
+				users[index].write ( text ) <br><br>
+				а вот админ - непосредственно вводит текст в messageBox ( т.е. при вводе в messageBox пишущий сообщение идентифицируется как админ, выводится его аватар и имя ) 
+				</p>
+				<!-- <div class="result3"></div> -->
+				<button name = "btn" class="btn" onclick = "exercise3()"> Show result in console</button>
+			</div>
+		</div>
+</body>
+</html>
