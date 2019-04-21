@@ -37,5 +37,9 @@ function exercise1 (event) {
 	console.log (log)
 
 
+}
 
+
+function showCode(param1, param2){
+    document.querySelector(param2).innerHTML = param1.toLocaleString()
 }
