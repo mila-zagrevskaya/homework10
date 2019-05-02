@@ -7,7 +7,8 @@ function exercise2 (event) {
 		var presence = false;
 		Object.defineProperty(this, "presence", {
 			get : () =>
-			presence ? `${this.name} is present` : `${this.name} is absent`,
+			presence ? `${this.name} is present` : 
+				`${this.name} is absent`,
 			set: newPresense =>
 			presence = Boolean(newPresense.replace(/\s/g, ''))
 		})

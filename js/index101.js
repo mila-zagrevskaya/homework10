@@ -30,8 +30,8 @@ function exercise1 (event) {
 	)
 
 	getKey = () => {
-	    var key = new Date().toLocaleString().split(", ")[1]
-	    return log [ key ] ? key + "[2]" : key
+	  var key = new Date().toLocaleString().split(", ")[1]
+	  return log [ key ] ? key + "[2]" : key
 	}
 
 	console.log (log)
